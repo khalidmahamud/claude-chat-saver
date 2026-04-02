@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Chat Saver</title>
+  <link rel="stylesheet" href="css/popup.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-title">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="icon-save">
+          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
+          <polyline points="17 21 17 13 7 13 7 21"/>
+          <polyline points="7 3 7 8 15 8"/>
+        </svg>
+        <h1>Chat Saver</h1>
+      </div>
+      <div class="header-badge" id="storage-badge">--</div>
+    </header>
+
+    <!-- Quick Actions -->
+    <section class="actions" id="quick-actions">
+      <p class="actions-label">Save current conversation</p>
+      <div class="actions-grid">
+        <button class="btn btn-primary" id="btn-save-md">
+          <span class="btn-icon">📝</span>
+          Markdown
+        </button>
+        <button class="btn btn-primary" id="btn-save-json">
+          <span class="btn-icon">📋</span>
+          JSON
+        </button>
+        <button class="btn btn-primary" id="btn-save-pdf">
+          <span class="btn-icon">📄</span>
+          PDF
+        </button>
+        <button class="btn btn-accent" id="btn-save-storage">
+          <span class="btn-icon">💾</span>
+          Save Local
+        </button>
+      </div>
+      <button class="btn btn-ghost full-width" id="btn-copy">
+        📎 Copy conversation to clipboard
+      </button>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Saved Conversations -->
+    <section class="saved">
+      <div class="saved-header">
+        <h2>Saved Conversations</h2>
+        <button class="btn btn-ghost btn-sm" id="btn-clear-all" title="Delete all saved conversations">
+          🗑️
+        </button>
+      </div>
+      <div id="saved-list" class="saved-list">
+        <div class="empty-state">
+          <p>No saved conversations yet.</p>
+          <p class="hint">Click "Save Local" to store conversations in the extension.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Status bar -->
+    <footer class="footer">
+      <span id="status-text">Ready</span>
+      <span id="storage-info"></span>
+    </footer>
+  </div>
+
+  <script src="js/popup.js"></script>
+</body>
+</html>
